@@ -5,6 +5,9 @@
  */
 package paquete01;
 
+import java.util.ArrayList;
+import paquete02.*;
+
 /**
  *
  * @author reroes
@@ -16,6 +19,32 @@ public class Ejecutor01 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        ArrayList<Menu> menu = new ArrayList<>();
+
+        MenuJunior ninos = new MenuJunior("Niños 01", 2, 1, 1.5);
+        MenuJunior ninos2 = new MenuJunior("Niños 02", 3, 1, 1.5);
+        MenuEconomico economico = new MenuEconomico("Econo 001", 4, 25);
+        MenuDia dia = new MenuDia("Dia 001", 5, 1, 1);
+        Carta carta = new Carta("Carta 001", 6, 1.5, 2, 10);
+        Cuenta cuenta = new Cuenta("René Elizalde", menu, 10);
+        
+        ninos.calcularTotal();
+        ninos2.calcularTotal();
+        economico.calcularTotal();
+        dia.calcularTotal();
+        carta.calcularTotal();
+        
+        menu.add(ninos);
+        menu.add(ninos2);
+        menu.add(economico);
+        menu.add(dia);
+        menu.add(carta);
+
+        
+        cuenta.establecerSubtotal();
+        cuenta.establecerTotal();
+
+        System.out.println(cuenta);
     }
     
     
