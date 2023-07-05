@@ -9,7 +9,7 @@ package paquete02;
  * @author Sistemas G Didactic
  */
 public class MenuDia extends Menu{
-     private double bebida;
+    private double bebida;
     private double postre;
 
     public MenuDia(String n, double v, double b, double p) {

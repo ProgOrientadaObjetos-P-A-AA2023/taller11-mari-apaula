@@ -19,35 +19,35 @@ public class Ejecutor01 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        ArrayList<Menu> menu = new ArrayList<>();
+        ArrayList<Menu> lista = new ArrayList<>();
 
-        MenuJunior ninos = new MenuJunior("Niños 01", 2, 1, 1.5);
-        MenuJunior ninos2 = new MenuJunior("Niños 02", 3, 1, 1.5);
-        MenuEconomico economico = new MenuEconomico("Econo 001", 4, 25);
         MenuDia dia = new MenuDia("Dia 001", 5, 1, 1);
-        Carta carta = new Carta("Carta 001", 6, 1.5, 2, 10);
-        Cuenta cuenta = new Cuenta("René Elizalde", menu, 10);
-        
-        ninos.calcularTotal();
-        ninos2.calcularTotal();
-        economico.calcularTotal();
         dia.calcularTotal();
-        carta.calcularTotal();
+        lista.add(dia);
         
-        menu.add(ninos);
-        menu.add(ninos2);
-        menu.add(economico);
-        menu.add(dia);
-        menu.add(carta);
+        MenuDia dia2 = new MenuDia("Dia 002", 2, 1, 1.5);
+        dia2.calcularTotal();
+        lista.add(dia2);
+        
+        MenuEconomico economico = new MenuEconomico("Econo 001", 4, 25);
+        economico.calcularTotal();
+        lista.add(economico);
 
+        MenuDia dia3 = new MenuDia("Dia 003", 5, 1, 1);
+        dia3.calcularTotal();
+        lista.add(dia3);
         
+        MenuCarta carta = new MenuCarta("Carta 001", 6, 1.5, 2, 10);
+        carta.calcularTotal();
+        lista.add(carta);
+
+        Cuenta cuenta = new Cuenta("René Elizalde", lista, 10);
         cuenta.establecerSubtotal();
         cuenta.establecerTotal();
 
         System.out.println(cuenta);
     }
-    
-    
+
 }
 // lo que debe presentar
 /*
@@ -80,8 +80,8 @@ Menu del Día:
 	Valor postre: 1,00
 	Valor del Menú: 7,00
 
-Menu a la Carta:
-	Plato: Carta 001
+Menu a la MenuCarta:
+	Plato: MenuCarta 001
 	Valor Inicial: 6.0
 	Valor guarnición: 1.5
 	Valor bebida: 2.0

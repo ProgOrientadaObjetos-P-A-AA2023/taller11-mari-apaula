@@ -10,13 +10,13 @@ import java.util.ArrayList;
  *
  * @author Sistemas G Didactic
  */
-public class Carta extends Menu{
+public class MenuCarta extends Menu{
     
     private double guarnicion;
     private double bebida;
     private double servicio;
 
-    public Carta(String n, double v, double g, double b, double s) {
+    public MenuCarta(String n, double v, double g, double b, double s) {
         super(n, v);
         guarnicion = g;
         bebida = b;
